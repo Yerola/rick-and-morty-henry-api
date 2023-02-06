@@ -1,0 +1,38 @@
+.me {
+    color: rgb(3, 238, 242);
+    margin-top: -80px;
+    padding-top: 10px;
+    padding-right: 30px;
+    border: 12px solid rgb(32, 14, 74);
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+.ab {
+    margin: 10px;
+    padding-right: 10px;
+}
+
+.like {
+    color: rgb(255, 125, 207);
+    text-decoration-color: black;
+}
+
+.boton {
+
+    margin-left: 895px;
+    padding: 1px 20px;
+    color:461a0f;
+    letter-spacing: 4px;
+    font-size: 25px;
+    font-family: monospace;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: rgba(255, 255, 255, 0.952);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #080808, 0 0 10px #080808, 0 0 10px #070707;
+    
+};

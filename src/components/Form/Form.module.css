@@ -1,0 +1,114 @@
+.warning {
+    color: red
+}
+
+.danger {
+    font-size: 10px;
+    color: white;
+    margin-left: 10em;
+}
+
+.body{
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding-top: 20px;
+    min-height: 100vh;
+}
+
+.form{
+    margin-top: -40px;
+    margin-left: 370px;
+}
+
+.input{
+    width: 160px;
+    background-color: rgba(44, 11, 82, 0.938);
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: monospace;
+    text-decoration: none;
+    color: #08f5e9;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    border: dotted;
+    margin-left: 80px;
+    
+}
+
+.input2{
+        width: 260px;
+    background-color: rgba(238, 118, 188, 0.938);
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: monospace;
+    text-decoration: solid;
+    
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    border: dotted;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: rgb(47, 42, 11);
+
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 10px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.boton{
+    margin-top: 14px;
+    margin-left: 13px;
+    padding: 1px 20px;
+    color:#050505;
+    letter-spacing: 4px;
+    font-size: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.1s;
+    background-color: rgba(240, 141, 243, 0.938);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #080808, 0 0 10px #080808, 0 0 20px #0c0c0c;
+    font-family: monospace;
+}
+
+
+
+
+.boton:hover{
+        background-color:  #e35df5(163, 72, 163, 0.938);
+    box-shadow: 0 0 10px #dc03f8;
+    
+}
+
+.input1{
+    width: 160px;
+    background-color: rgba(97, 97, 94, 0.938);
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: monospace;
+    text-decoration: none;
+    
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    border: none;
+    margin-left: 20px;
+    color: rgb(255, 217, 5);
+
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    width: 45%;
+    justify-content: space-around;
+};
