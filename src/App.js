@@ -23,8 +23,8 @@ function App() {
   const [access, setAccess] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
-  const username = "ye_lato@yahoo.com.ar";
-  const password = "12345678";
+  const username = "Click Iniciar Sesión"; //ye_lato@yahoo.com.ar
+  const password = "0123456789101112130"; //12345678
 
   useEffect(() => {
     onSearch(1);
