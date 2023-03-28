@@ -1,4 +1,4 @@
-# Yesica Romina Lato | Integración M2 Bootcamp Soy Henry
+# Yesica Romina Lato | Integración Bootcamp Soy Henry
 
 ---
 
