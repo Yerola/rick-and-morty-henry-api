@@ -9,6 +9,7 @@ import Favorites from "./components/Favorites/Favorites";
 import imagenes from "./imagenes/hd-wallpaper-5858656.jpg";
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Contenedor = styled.div`
   background-image: url(${imagenes});
@@ -23,43 +24,46 @@ function App() {
   const [access, setAccess] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
-  const username = "Click Iniciar Sesión"; //ye_lato@yahoo.com.ar
-  const password = "0123456789101112130"; //12345678
+  const username = "ye_lato@yahoo.com.ar";
+  const password = "12345678";
 
-  useEffect(() => {
-    onSearch(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
 
   useEffect(() => {
     !access && navigate("/");
   }, [access, navigate]);
 
-  const onSearch = (character) => {
-    let flag = true;
-    characters.forEach((element) => {
-      if (parseInt(character) === element.id) {
-        window.alert(
-          "El personaje que desea agregar ya se encuentra en la aplicación"
-        );
-        return (flag = false);
+
+  async function onSearch(character) {
+    try {
+      // const onSearch = (character) => {
+      characters.forEach((element) => {
+        if (parseInt(characters) === element.id) {
+          window.alert("El personaje que desea agregar ya se encuentra en la aplicación");
+
+        }
+      });
+
+
+      const objeto = await axios(`https://rickandmortyapi.com/api/character/${character}`)
+      const personaje = objeto.data;
+
+      if (personaje.name) {
+        if (characters.find(char => char.id === personaje.id)) window.alert("ID Repetido");
+        else (setCharacters((oldChars) => [...oldChars, personaje]));
+      } else {
+        window.alert("No hay personajes con ese ID");
       }
-    });
-    flag &&
-      fetch(`https://rickandmortyapi.com/api/character/${character}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("No hay personajes con ese ID");
-          }
-        });
+
+    } catch (error) {
+      console.log(error);
+    };
   };
 
   const onClose = (character) => {
+
     setCharacters((characters) =>
-      characters.filter((element) => element.id !== character)
+      characters.filter((element) => element.id !== character) // probar con id en lugar de character
     );
   };
 
@@ -72,15 +76,19 @@ function App() {
     }
   };
 
+  const logout = () => {
+    setAccess(false)
+    navigate('/')
+  }
+
   return (
     <Contenedor className="App">
-      {location.pathname !== "/" && <Navbar onSearch={onSearch} />}
+      {location.pathname !== "/" && <Navbar onSearch={onSearch} logout={logout} />}
       <Routes>
         <Route exact path='/' element={<Form login={login} />} />
         <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
         <Route path='/about' element={<About />} />
         <Route path='/detail/:detailId' element={<Detail />} />
-        {/* <Route path='*' element={<Error />} /> */}
         <Route path="/favorites" element={<Favorites />} />
         <Route path='*' element={<Error />} />
       </Routes>
