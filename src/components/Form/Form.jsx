@@ -7,8 +7,8 @@ import validation from "../validation";
 export default function Form(props) {
 
   const [userData, setUserData] = useState({
-    username: "",
-    password: ""
+   username: "Click Iniciar Sesión",
+    password: "0123456789101112130"
   });
 
   const [errors, setErrors] = useState({
