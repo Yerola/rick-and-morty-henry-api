@@ -8,9 +8,8 @@
 
 🔹 Este es mi primer desarrollo front-end.
 
-> **Nota**:🧐 para loguearse utilizar las siguientes credenciales:
-Usuario: ye_lato@yahoo.com.ar
-Contraseña: 12345678
+> **Nota**:Nota: 🧐 para loguearse se utilizaban las siguientes credenciales: 
+Usuario: ye_lato@yahoo.com.ar Contraseña: 12345678 Pero ya fueron anuladas a modo deployment demostrativo.
 
 ---
 
