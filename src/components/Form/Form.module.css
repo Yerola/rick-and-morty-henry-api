@@ -32,7 +32,8 @@
     letter-spacing: 2px;
     padding-left: 15px;
     border: dotted;
-    margin-left: 80px;
+    display: block;
+    margin: 0 auto;
     
 }
 
@@ -112,3 +113,10 @@
     width: 45%;
     justify-content: space-around;
 };
+
+    @media screen and (max-width: 600px) {
+    .spinnerContainer img {
+        width: 80%;
+        height: auto;
+    }
+    }
