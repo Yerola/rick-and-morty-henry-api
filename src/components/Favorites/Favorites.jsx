@@ -45,7 +45,7 @@ const Favorites = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { if(myFavorites: state.myFavorites): <h1>no hay personajes favoritos</h1> };
+  return { myFavorites: state.myFavorites };
 };
 
 export default connect(mapStateToProps, null)(Favorites);
