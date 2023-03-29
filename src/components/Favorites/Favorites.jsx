@@ -19,7 +19,7 @@ const Favorites = (props) => {
     } else {
       dispatch(filterCards(e.target.value));
     }
-  }: <h1>no hay personajes favoritos</h1>;
+  };
   
   <center><button className={styles.boton}>VOLVER</button></center>
   return (
@@ -45,7 +45,7 @@ const Favorites = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { myFavorites: state.myFavorites };
+  return { if(myFavorites: state.myFavorites): <h1>no hay personajes favoritos</h1> };
 };
 
 export default connect(mapStateToProps, null)(Favorites);
