@@ -6,20 +6,43 @@ const Buscador = styled.input``;
 const Boton = styled.button``;
 
 export default function SearchBar(props) {
-  let [characterId, setCharacterId] = useState();
+  let [characterId, setCharacterId] = useState("");
+
+  const limpiarBusqueda = () => {
+    setCharacterId("");
+  };
+
+  const handleSearch = () => {
+    props.onSearch(characterId);
+    limpiarBusqueda();
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <Contenedor>
       <Buscador
-        type="search"
+        type="text"
         name="search"
         id="#"
-        onChange={(e) => setCharacterId((characterId = e.target.value))}
+        placeholder='Número de personaje...'
+        value={characterId}
+        onChange={(e) => setCharacterId(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
-      <Boton onClick={() => props.onSearch(characterId)}
-      >Buscar</Boton>
-      <span role="img" aria-labelledby="loupe">🔍</span>
-      <button onClick={() => props.onSearch(Math.floor(Math.random() * 826))}>Aleatorio</button>
+      <Boton onClick={handleSearch}>Buscar</Boton>
+      <span role="img" aria-labelledby="loupe">
+        🔍
+      </span>
+      <button
+        onClick={() => props.onSearch(Math.floor(Math.random() * 826))}
+      >
+        Aleatorio
+      </button>
     </Contenedor>
   );
-}
+};
