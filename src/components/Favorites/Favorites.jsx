@@ -19,7 +19,8 @@ const Favorites = (props) => {
     } else {
       dispatch(filterCards(e.target.value));
     }
-  };
+  }: <h1>no hay personajes favoritos</h1>;
+  
   <center><button className={styles.boton}>VOLVER</button></center>
   return (
     <div>
